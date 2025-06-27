@@ -1,14 +1,39 @@
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.map-window {
+  height: 100%;
+  width: 100%;
+}
+
+.map-tile-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  aspect-ratio: 1 / 1;
+}
+
+.tile {
+  border: 2px solid red;
+  display: block;
+  aspect-ratio: 1 / 1;
 }
 
 .zoom-controls {
   display: flex;
   flex-direction: column;
   width: 60px;
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
 }
@@ -19,7 +44,7 @@ button {
   margin: 4px;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: bold;
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
