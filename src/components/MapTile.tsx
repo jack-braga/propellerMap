@@ -27,7 +27,6 @@ function MapTile({zoomLevel, tileDepth, tileCoord, onTileStatusChange, enableOut
     const [ entry ] = entries;
     const newPriority = entry.isIntersecting ? "inView" : shouldRender ? "outOfView" : "none";
     setRenderPrioity(newPriority);
-    // onTileStatusChange will be called in the separate useEffect for reporting status
   }, [shouldRender, tileId, onTileStatusChange, isImgLoaded]);
 
   useEffect(() => {
